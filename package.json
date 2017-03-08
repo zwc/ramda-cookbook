@@ -1,0 +1,10 @@
+{
+  "name": "ramda-cookbook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "ramda": "^0.23.0"
+  }
+}
