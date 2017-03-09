@@ -7,10 +7,12 @@ const notArr = {};
 const iAmString = 'test';
 const iAmNothing = undefined;
 
-const alwaysArray = R.ifElse(Array.isArray, R.identity, R.always([]));
+const EMPTY_ARRAY = Object.freeze([]);
+const alwaysArray = R.ifElse(Array.isArray, R.identity, R.always(EMPTY_ARRAY));
 
 expect(alwaysArray(arr)).to.eql(['test']);
 expect(alwaysArray(obj)).to.eql([]);
 expect(alwaysArray(notArr)).to.eql([]);
 expect(alwaysArray(iAmString)).to.eql([]);
 expect(alwaysArray(iAmNothing)).to.eql([]);
+expect(alwaysArray('test') === alwaysArray({})).to.be.true;
